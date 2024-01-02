@@ -1,0 +1,18 @@
+{
+    "name": "sqs-consumer",
+    "version": "1.0.0",
+    "description": "Your package description",
+    "main": "main.js",
+    "scripts": {
+      "start": "node main.js"
+    },
+    "keywords": [
+      "aws-sdk"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+      "aws-sdk": "^2.1526.0"
+    }
+  }
+  

@@ -1,0 +1,17 @@
+{
+    "name": "solace-consumer",
+    "version": "1.0.0",
+    "description": "Your package description",
+    "type": "module",
+    "main": "main.js",
+    "scripts": {
+        "start": "node main.js"
+    },
+    "keywords": [
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+        "solclientjs": "^10.15.0"
+    }
+}
