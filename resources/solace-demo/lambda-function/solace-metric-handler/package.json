@@ -1,18 +1,18 @@
 {
-    "name": "sqs-metrics-handler",
+    "name": "solace-metrics-handler",
     "version": "1.0.0",
     "description": "Your package description",
-    "main": "main.js",
+    "main": "index.js",
     "scripts": {
-      "start": "node main.js"
+        "start": "node index.js"
     },
     "keywords": [
-      "aws-sdk"
+        "aws-sdk"
     ],
     "author": "Your Name",
     "license": "MIT",
     "dependencies": {
-      "aws-sdk": "^2.1526.0"
+        "aws-sdk": "^2.1526.0",
+        "axios": "^1.6.3"
     }
-  }
-  
+}
