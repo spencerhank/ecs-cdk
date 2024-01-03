@@ -20,6 +20,8 @@ Setup that provides horizontal scaling capabilities for applications deployed to
 
 ## Basic Design For Horizontal Scaling Based on SQS Queue Depth
 
+![](./images/ECS%20Scaler%20Blog%20Post%20Diagrams%20-%20cdk-app-sqs.png)
+
 ### Basic Design taken from https://github.com/aws-samples/aws-ecs-auto-scaling-with-custom-metrics/tree/main
 
 1. Deploy SQS FIFO Queue with API Gateway
@@ -38,6 +40,8 @@ Setup that provides horizontal scaling capabilities for applications deployed to
    - Returns capacity to 1 when SQS backlog is 0
 
 ## Basic Design For Horizontal Scaling Based on Solace Queue Depth
+
+![](./images/ECS%20Scaler%20Blog%20Post%20Diagrams%20-%20cdk-app.png)
 
 ### Basic Design adapted from the SQS Example with the following differences
 
