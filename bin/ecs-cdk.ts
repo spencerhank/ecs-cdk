@@ -6,9 +6,11 @@ import { SolaceAutoScalingConsumerStack } from '../lib/solace-autoscaling-consum
 
 const app = new cdk.App();
 
+const accountId = '<account_id>';
+
 const vpcStack = new VpcStack(app, 'EcsAutoScalingVpcStack', {
     env: {
-        account: '804666467877',
+        account: accountId,
         region: 'us-east-2'
     }
 });
@@ -16,7 +18,7 @@ const vpcStack = new VpcStack(app, 'EcsAutoScalingVpcStack', {
 const sqsAutoScalingConsumerStack = new SqsAutoScalingConsumerStack(app, 'SqsAutoScalingConsumerStack', {
     ecsVpc: vpcStack.ecsVpc,
     env: {
-        account: '804666467877',
+        account: accountId,
         region: 'us-east-2'
     }
 });
@@ -25,7 +27,7 @@ sqsAutoScalingConsumerStack.addDependency(vpcStack);
 const solaceAutoScalingConsumerStack = new SolaceAutoScalingConsumerStack(app, 'SolaceAutoScalingConsumerStack', {
     ecsVpc: vpcStack.ecsVpc,
     env: {
-        account: '804666467877',
+        account: accountId,
         region: 'us-east-2'
     }
 });
