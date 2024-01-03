@@ -160,7 +160,7 @@ constructor(scope: App, id:string, props: SqsAutoScalingConsumerStackProps) {
       // rule.addTarget(new eventTargets.LambdaFunction(lambdaMetricHandler))
       const sqsMetricHandler = new SqsMetricHandler(this, "SqsMetricHandler", {
         acceptableLatency: '10',
-        averageProcessingTime: '10',
+        averageProcessingTime: '.1',
         metricNameSpace: backogPerTaskCloudwatchMetric.namespace,
         metricName: backogPerTaskCloudwatchMetric.metricName,
         metricUnit: 'Count',

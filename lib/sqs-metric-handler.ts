@@ -52,7 +52,7 @@ export class SqsMetricHandler extends Construct {
           }));
 
         const rule = new events.Rule(this, "EventBridgeScheduleForLambdaMetric", {
-          schedule: events.Schedule.cron({minute: '0/3'})
+          schedule: events.Schedule.cron({minute: '0/1'})
         });
         rule.addTarget(new eventTargets.LambdaFunction(this.sqsMetricHandler));
 
