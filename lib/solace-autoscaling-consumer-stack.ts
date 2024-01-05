@@ -117,10 +117,10 @@ export class SolaceAutoScalingConsumerStack extends Stack {
           METRIC_UNIT: 'Count',
           SOLACE_MESSAGE_VPN_NAME: 'aws-us-east-1',
           SOLACE_QUEUE_NAME: 'ecsQ',
-          SOLACE_SEMP_URL: 'mr-connection-4e44l2r0j7d.messaging.solace.cloud',
+          SOLACE_SEMP_URL: '<update>',
           SOLACE_SEMP_PORT: '943',
-          SOLACE_ADMIN_USERNAME: 'aws-us-east-1-view',
-          SOLACE_ADMIN_PASSWORD: 'nav317oiv9ggcilu5ngbrtocaa'
+          SOLACE_ADMIN_USERNAME: '<update>>',
+          SOLACE_ADMIN_PASSWORD: '<update>>'
           
         }
       })
