@@ -81,7 +81,7 @@ export class SolaceCustomAutoScalingConsumerStack extends Stack {
           SERVICE_URL:
             "wss://mr-connection-6y32tpb05yv.messaging.solace.cloud:443",
           USER_NAME: "solace-cloud-client",
-          PASSWORD: "aif7qriqt9lf3o27ao111p2ddg",
+          PASSWORD: "",
           VPN_NAME: "pq-demo",
         },
         logging: new ecs.AwsLogDriver({
@@ -112,7 +112,7 @@ export class SolaceCustomAutoScalingConsumerStack extends Stack {
 
     const serviceAutoScalingTask = solaceClientService.autoScaleTaskCount({
       minCapacity: 1,
-      maxCapacity: 10,
+      maxCapacity: 100,
     });
 
     //  Create Custom ECS Scaler application as ECS Scaler Task
@@ -162,7 +162,7 @@ export class SolaceCustomAutoScalingConsumerStack extends Stack {
           SEMP_URL:
             "https://mr-connection-6y32tpb05yv.messaging.solace.cloud:943",
           SEMP_ADMIN_USERNAME: "pq-demo-admin",
-          SEMP_ADMIN_PASSWORD: "f19ivlrbakernu7vtc3u884uuu",
+          SEMP_ADMIN_PASSWORD: "",
           VPN_NAME: "pq-demo",
           ECS_CLUSTER: solaceClientCluster.clusterName,
           ECS_SERVICE: solaceClientService.serviceName,

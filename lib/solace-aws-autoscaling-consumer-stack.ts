@@ -86,7 +86,7 @@ export class SolaceAWSAutoScalingConsumerStack extends Stack {
           SERVICE_URL:
             "wss://mr-connection-6y32tpb05yv.messaging.solace.cloud:443",
           USER_NAME: "solace-cloud-client",
-          PASSWORD: "aif7qriqt9lf3o27ao111p2ddg",
+          PASSWORD: "",
           VPN_NAME: "pq-demo",
         },
         logging: new ecs.AwsLogDriver({
@@ -133,17 +133,28 @@ export class SolaceAWSAutoScalingConsumerStack extends Stack {
 
     serviceAutoScalingTask.scaleOnMetric("SolaceQueueMessageBacklogScaling", {
       metric: backlogPerTaskCloudwatchMetric,
-      adjustmentType: AdjustmentType.PERCENT_CHANGE_IN_CAPACITY,
-      minAdjustmentMagnitude: 1,
+      adjustmentType: AdjustmentType.CHANGE_IN_CAPACITY,
       cooldown: Duration.seconds(60),
       scalingSteps: [
-        { lower: 0, upper: 0, change: -100 },
-        { lower: 1, upper: 5, change: -20 },
-        { lower: 5, upper: 10, change: -10 },
-        { lower: 10, upper: 15, change: +30 },
-        { lower: 15, change: +50 },
+        { lower: 0, change: -5 },
+        { lower: 1, upper: 5, change: -1 },
+        { lower: 12, change: +3 },
+        { lower: 15, change: +5 },
       ],
     });
+
+    // serviceAutoScalingTask.scaleOnMetric("SolaceQueueMessageBacklogScaling", {
+    //   metric: backlogPerTaskCloudwatchMetric,
+    //   adjustmentType: AdjustmentType.PERCENT_CHANGE_IN_CAPACITY,
+    //   minAdjustmentMagnitude: 1,
+    //   cooldown: Duration.seconds(60),
+    //   scalingSteps: [
+    //     { lower: 0, change: -100 },
+    //     { lower: 1, upper: 3, change: -20 },
+    //     { lower: 10, change: +50 },
+    //     { lower: 13, change: +100 },
+    //   ],
+    // });
 
     const solaceMetricHandler = new NodejsFunction(
       this,
@@ -165,7 +176,7 @@ export class SolaceAWSAutoScalingConsumerStack extends Stack {
           SOLACE_SEMP_URL: "mr-connection-6y32tpb05yv.messaging.solace.cloud",
           SOLACE_SEMP_PORT: "943",
           SOLACE_ADMIN_USERNAME: "pq-demo-admin",
-          SOLACE_ADMIN_PASSWORD: "f19ivlrbakernu7vtc3u884uuu",
+          SOLACE_ADMIN_PASSWORD: "",
         },
       }
     );

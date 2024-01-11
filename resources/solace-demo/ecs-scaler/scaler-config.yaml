@@ -2,7 +2,7 @@
 brokerConfig:
   brokerSempUrl: https://mr-connection-6y32tpb05yv.messaging.solace.cloud:943
   username: pq-demo-admin
-  password: f19ivlrbakernu7vtc3u884uuu
+  password: 
   msgVpnName: pq-demo
   pollingInterval: 10
 ecsServiceConfig:
