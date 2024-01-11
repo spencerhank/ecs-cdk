@@ -13,8 +13,9 @@ RUN npm install
 # Copy the contents of the ./cmd directory to the container at /usr/src/app
 COPY ./client .
 
-# Expose port 8080 to the outside world
-# EXPOSE 8080
+
+# Expose port 3000 for healthcheck
+EXPOSE 3000
 
 # Command to run your application
 CMD ["node", "main.js"]

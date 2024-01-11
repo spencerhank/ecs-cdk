@@ -7,11 +7,11 @@
     "scripts": {
         "start": "node main.js"
     },
-    "keywords": [
-    ],
+    "keywords": [],
     "author": "Your Name",
     "license": "MIT",
     "dependencies": {
+        "express": "^4.18.2",
         "solclientjs": "^10.15.0"
     }
 }
