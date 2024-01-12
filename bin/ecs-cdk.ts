@@ -7,7 +7,7 @@ import { SolaceCustomAutoScalingConsumerStack } from "../lib/solace-custom-autos
 
 const app = new cdk.App();
 
-const accountId = "804666467877";
+const accountId = "";
 
 const vpcStack = new VpcStack(app, "EcsAutoScalingVpcStack", {
   env: {
